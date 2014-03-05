@@ -1,0 +1,160 @@
+
+@import 'nib'
+
+global-reset()
+
+DARK_COLOR=#200040
+HORIZ_PADDING=32px
+RED_COLOR=#8C0000
+GREEN_COLOR=#00B259
+
+html
+  width 100%
+  height 100%
+
+body
+  height 100%
+  width 100%
+  margin 0
+  line-height: 1.4
+  font-family: 'Helvetica Neue', 'Liberation Sans', Arial, sans serif
+  color #111
+  font-size 16px
+  background #f8f8f8
+
+header
+  background linear-gradient(DARK_COLOR, lighten(DARK_COLOR, 10%))
+  color #fff
+  padding 12px HORIZ_PADDING
+
+  h1
+    font-weight bold
+    font-size 24px
+    text-shadow 0 1px rgba(0, 0, 0, .5)
+
+a
+  color inherit
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+  &:focus
+    outline: 0
+
+
+section
+  padding 12px HORIZ_PADDING
+
+strong
+  font-weight bold
+
+button
+  outline none
+  cursor pointer
+
+input, textarea
+  border-radius 3px
+  box-shadow inset 0px 1px 3px lighten(#000, 90%)
+  border 1px solid #aaa
+  padding 8px 9px
+  font-size 16px
+  font-family 'Helvetica Neue', 'Liberation Sans', Arial, sans serif
+  margin 0
+  box-sizing border-box
+    
+  &:focus
+    outline none
+    box-shadow 0px 0px 0px 2px GREEN_COLOR
+
+  &[disabled]
+    background-color #f6f6f6
+
+h2
+  font-weight 300
+  font-size 24px
+  margin-bottom 16px
+
+label
+  font-weight 300
+
+LABEL_WIDTH=80px
+
+.input-container
+  clearfix()
+  margin 12px 0
+  label
+    float left
+    width LABEL_WIDTH
+  input, textarea
+    float left
+
+  .error-message
+    display none
+
+  &.error
+    input, textarea
+      outline none
+      box-shadow 0px 0px 0px 2px RED_COLOR
+      color RED_COLOR
+
+    .error-message
+      display block
+
+input
+  width 240px
+
+textarea
+  width 360px
+  height 180px
+
+button
+  font-family 'Helvetica Neue', 'Liberation Sans', Arial, sans serif
+  border none
+  background none
+  outline none
+  font-size 16px
+  margin 0
+  padding 0
+  display inline-block
+  font-weight 500
+  text-transform uppercase
+  cursor: pointer
+  text-align: center
+  padding 0px 16px
+  line-height 34px
+  background-color GREEN_COLOR
+  border 1px solid darken(GREEN_COLOR, 25%)
+  border-radius 3px
+  color #fff
+  text-shadow 0px -1px 0px rgba(0, 0, 0, .25)
+  i
+    margin-right 6px
+
+  &:hover
+    background-color lighten(GREEN_COLOR, 10%)
+    text-decoration: none
+    if SHADOW
+      box-shadow 0px 1px 3px rgba(0, 0, 0, .25)
+
+  &:active
+    background-color darken(GREEN_COLOR, 5%)
+
+  &:disabled, &:hover:disabled
+    background-color GREEN_COLOR
+    box-shadow none
+    opacity 0.35
+    cursor default
+
+  margin-left LABEL_WIDTH
+
+.error-message
+  background RED_COLOR
+  color white
+  text-shadow 0 1px 1px rgba(0, 0, 0, 0.5)
+  padding 8px
+  font-size 12px
+  border-radius 3px
+  font-weight bold
+  float left
+  margin-left 16px

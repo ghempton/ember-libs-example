@@ -1,0 +1,29 @@
+<form>
+  <h2>Contact Us</h2>
+
+  <div class="input-container" {{bindAttr class="errors.name:error"}}>
+    <label for="name">Name: </label>
+    {{input value=name id="name"}}
+    <span class="error-message">{{errors.name}}</span>
+  </div>
+
+  <div class="input-container" {{bindAttr class="errors.email:error"}}>
+    <label for="email">Email: </label>
+    {{input value=email id="email" classBindings="errors.email:"}}
+    <span class="error-message">{{errors.email}}</span>
+  </div>
+
+  <div class="input-container" {{bindAttr class="errors.subject:error"}}>
+    <label for="subject">Subject: </label>
+    {{input value=subject id="subject"}}
+    <span class="error-message">{{errors.subject}}</span>
+  </div>
+
+  <div class="input-container" {{bindAttr class="errors.message:error"}}>
+    <label for="message">Message: </label>
+    {{textarea value=message id="message"}}
+    <span class="error-message">{{errors.message}}</span>
+  </div>
+
+  <button {{action "submit"}}>Submit</button>
+</form>
