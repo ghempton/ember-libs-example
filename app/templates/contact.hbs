@@ -1,23 +1,9 @@
 <form>
   <h2>Contact Us</h2>
 
-  <div class="input-container" {{bindAttr class="errors.name:error"}}>
-    <label for="name">Name: </label>
-    {{input value=name id="name"}}
-    <span class="error-message">{{errors.name}}</span>
-  </div>
-
-  <div class="input-container" {{bindAttr class="errors.email:error"}}>
-    <label for="email">Email: </label>
-    {{input value=email id="email" classBindings="errors.email:"}}
-    <span class="error-message">{{errors.email}}</span>
-  </div>
-
-  <div class="input-container" {{bindAttr class="errors.subject:error"}}>
-    <label for="subject">Subject: </label>
-    {{input value=subject id="subject"}}
-    <span class="error-message">{{errors.subject}}</span>
-  </div>
+  {{input-for value=name error=errors.name label="Name:" name="name"}}
+  {{input-for value=email error=errors.email label="Email:" name="email"}}
+  {{input-for value=subject error=errors.subject label="Subject:" name="subject"}}
 
   <div class="input-container" {{bindAttr class="errors.message:error"}}>
     <label for="message">Message: </label>
