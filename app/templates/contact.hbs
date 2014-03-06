@@ -5,7 +5,7 @@
   {{input-for value=email error=errors.email label="Email:" name="email"}}
   {{input-for value=subject error=errors.subject label="Subject:" name="subject"}}
 
-  <div class="input-container" {{bindAttr class="errors.message:error"}}>
+  <div class="input-container" {{bind-attr class="errors.message:error"}}>
     <label for="message">Message: </label>
     {{textarea value=message id="message"}}
     <span class="error-message">{{errors.message}}</span>
