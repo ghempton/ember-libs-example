@@ -1,9 +1,9 @@
 <form>
   <h2>Contact Us</h2>
 
-  {{input-for value=name error=errors.name label="Name:" name="name"}}
-  {{input-for value=email error=errors.email label="Email:" name="email"}}
-  {{input-for value=subject error=errors.subject label="Subject:" name="subject"}}
+  {{input-for name}}
+  {{input-for email}}
+  {{input-for subject}}
 
   <div class="input-container" {{bind-attr class="errors.message:error"}}>
     <label for="message">Message: </label>
