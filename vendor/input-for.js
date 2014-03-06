@@ -3,5 +3,9 @@ var InputFor = Ember.Component.extend({
   layoutName: 'input-for'
 });
 
-window.Inputs = Ember.Namespace.create();
-Inputs.InputForComponent = InputFor;
+Ember.Application.initializer({
+  name: 'inputs',
+  initialize: function(container, application) {
+    container.register('component:input-for', InputFor);
+  }
+});
