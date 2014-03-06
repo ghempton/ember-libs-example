@@ -4,12 +4,7 @@
   {{input-for name}}
   {{input-for email}}
   {{input-for subject}}
-
-  <div class="input-container" {{bind-attr class="errors.message:error"}}>
-    <label for="message">Message: </label>
-    {{textarea value=message id="message"}}
-    <span class="error-message">{{errors.message}}</span>
-  </div>
+  {{input-for message type="text"}}
 
   <button {{action "submit"}}>Submit</button>
 </form>
